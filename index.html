@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SORRY BURGER 🍔❤️</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .card {
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      max-width: 450px;
+      width: 100%;
+    }
+    h1 {
+      color: #e65100;
+      margin-top: 0;
+      font-size: 28px;
+    }
+    p {
+      color: #424242;
+      line-height: 1.6;
+      font-size: 15px;
+    }
+    .inside-joke-btn {
+      background-color: #ff9800;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 25px;
+      font-weight: bold;
+      cursor: pointer;
+      margin: 15px 0;
+      transition: transform 0.2s;
+    }
+    .inside-joke-btn:hover {
+      transform: scale(1.05);
+    }
+    .cheesecake-img {
+      width: 100%;
+      max-height: 220px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin: 15px 0 5px 0;
+    }
+    .caption {
+      font-style: italic;
+      color: #8d6e63;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    .btn-group {
+      margin-top: 20px;
+      position: relative;
+      min-height: 50px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+    button.action-btn {
+      padding: 12px 25px;
+      font-size: 16px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.2s ease;
+    }
+    .btn-yes {
+      background-color: #4caf50;
+      color: white;
+    }
+    .btn-no {
+      background-color: #f44336;
+      color: white;
+      position: absolute;
+    }
+    #response-message {
+      margin-top: 20px;
+      padding: 15px;
+      background-color: #e8f5e9;
+      border-radius: 10px;
+      color: #2e7d32;
+      font-weight: bold;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>SORRY BURGER 🍔</h1>
+    
+    <p>
+      I know I was acting weird, replying dry all of a sudden, and making things odd by saying I was zoning out when you were just checking on me out of genuine concern.
+    </p>
+
+    <!-- Inside Joke Interactive Button -->
+    <button class="inside-joke-btn" onclick="holdHerEars()">
+      👂 Click to let me hold your big ears!
+    </button>
+
+    <!-- Hazelnut Cheesecake Image -->
+    <img src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=800&q=80" alt="Hazelnut Cheesecake" class="cheesecake-img">
+    <div class="caption">I owe you this one 🍰✨</div>
+
+    <p style="font-weight: 600;">So... are we good now?</p>
+
+    <div class="btn-group" id="btn-container">
+      <button class="action-btn btn-yes" onclick="forgive()">Yes, we are!</button>
+      <button class="action-btn btn-no" id="no-btn" onmouseover="moveButton()" onclick="moveButton()">No 😤</button>
+    </div>
+
+    <div id="response-message">
+      I'll TRY not to make you angry again... not a blah blah thing huhhh.. 🫶✨
+    </div>
+  </div>
+
+  <script>
+    function holdHerEars() {
+      alert("👂 Holding YOUR big ears right now to express my sincere apology so you don't take it for granted! 😜");
+    }
+
+    function moveButton() {
+      const btn = document.getElementById('no-btn');
+      const x = Math.random() * (window.innerWidth - 120);
+      const y = Math.random() * (window.innerHeight - 60);
+      btn.style.position = 'fixed';
+      btn.style.left = x + 'px';
+      btn.style.top = y + 'px';
+    }
+
+    function forgive() {
+      document.getElementById('response-message').style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
